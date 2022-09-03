@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Ejercicio Express</title>
+</head>
+
+<body>
+  <div>
+    <form id="insertar">
+      <fieldset>
+        <legend>Agregar nuevo ejercicio</legend>
+        Nombre: <input name="nombre" /> <br />
+        Series: <input maxlength="3" name="series" /> <br />
+        Repeticiones: <input maxlength="3" name="repeticiones" /> <br />
+        Descanso: <input maxlength="3" name="descanso" /> <br />
+        <button>Agregar</button>
+      </fieldset>
+    </form>
+
+    <form id="editar">
+      <fieldset>
+        <legend>Editar ejercicio</legend>
+        Nombre:
+        <select>
+          <option selected disabled>Seleccione un ejercicio</option>
+        </select>
+        <br />
+        Series: <input maxlength="3" name="series" /> <br />
+        Repeticiones: <input maxlength="3" name="repeticiones" /> <br />
+        Descanso: <input maxlength="3" name="descanso" /> <br />
+        <button>Editar</button>
+      </fieldset>
+    </form>
+
+    <form id="eliminar">
+      <fieldset>
+        <legend>Eliminar ejercicio</legend>
+        Nombre:
+        <select>
+          <option selected disabled>Seleccione un ejercicio</option>
+        </select>
+        <br />
+        <button>Eliminar</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <table border="solid">
+    <thead>
+      <th>Nombre</th>
+      <th>Series</th>
+      <th>Repeticiones</th>
+      <th>Descanso</th>
+    </thead>
+
+    <tbody></tbody>
+  </table>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

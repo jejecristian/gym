@@ -1,0 +1,41 @@
+const express = require('express');
+const app = express();
+require('dotenv').config();
+const port = process.env.PORT || 3_000;
+
+const { insertar, leer, actualizar, eliminar } = require('./pg.js');
+
+// A)
+// const path = require('path');
+// console.log(__dirname);
+// console.log(path.join(__dirname, '../public/index.html'));
+
+// B)
+// const path = require('path');
+// const root = path.join(__dirname, '../');
+
+// C)
+// console.log(process.cwd());
+// console.log('./public/index.html', { root: process.cwd()});
+
+// app.get('/', (req, res) => {
+//   // A)
+//   // res.sendFile(path.join(__dirname, '../public/index.html'));
+
+//   // B)
+//   // res.sendFile(`${root}public/index.html`);
+
+//   // C)
+//   // res.sendFile('./public/index.html', { root: process.cwd()});
+// });
+
+app.use(express.static('./public', { root: process.cwd() }));
+app.use(express.json());
+
+app.get('/', (req, res) => res.sendFile('./public/index.html', { root: process.cwd() }));
+
+app.all('*', (req, res) => res.status(404).json({ code: 404, message: 'Page not Found !!!' }));
+
+app.listen(port);
+
+module.exports = { app };

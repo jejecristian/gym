@@ -1,0 +1,13 @@
+div {
+  display: flex;
+}
+
+table {
+  display: inline-block;
+}
+
+table td,
+th {
+  padding: 10px;
+  text-align: center;
+}
